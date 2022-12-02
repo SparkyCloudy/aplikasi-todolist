@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class AplikasiTodoList {
@@ -21,11 +20,6 @@ public class AplikasiTodoList {
                 System.out.println(no + ". " + todo);
             }
         }
-    }
-
-    public static void testShowTodoList() {
-        showTodoList();
-        System.out.println(Arrays.toString(model));
     }
 
     /**
@@ -60,14 +54,6 @@ public class AplikasiTodoList {
         }
     }
 
-    public static void testAddTodoList() {
-        for (var i = 0; i < 25; i++) {
-            addTodoList("TodoList ke-" + i);
-        }
-
-        showTodoList();
-    }
-
     /**
      * Menghapus Todo dari list
      */
@@ -88,26 +74,15 @@ public class AplikasiTodoList {
         }
     }
 
-    public static void testRemoveTodoList() {
-        addTodoList("satu");
-        addTodoList("dua");
-        addTodoList("tiga");
-        addTodoList("empat");
-        var result = removeTodoList(20);
-        System.out.println(result);
-
-        result = removeTodoList(1);
-        System.out.println(result);
-    }
-
+    /**
+     * @param info section input (Ex. Nama: (userinput))
+     *             how to implements:
+     *             var something = input("Nama");
+     * @return Scanner
+     */
     public static String input(String info) {
         System.out.print(info + ": " );
         return scanner.nextLine();
-    }
-
-    public static void testInput() {
-        var name = input("Nama");
-        System.out.println("Hi " + name);
     }
 
     /**
@@ -135,16 +110,6 @@ public class AplikasiTodoList {
         }
     }
 
-    public static void testViewShowTodoList() {
-        addTodoList("satu");
-        addTodoList("dua");
-        addTodoList("tiga");
-        addTodoList("empat");
-        addTodoList("lima");
-
-        viewShowTodoList();
-    }
-
     /**
      * Menampilkan view menambahkan Todo list
      */
@@ -158,12 +123,6 @@ public class AplikasiTodoList {
         } else {
             addTodoList(todo);
         }
-    }
-
-    public static void testViewAddTodoList() {
-        viewAddTodoList();
-
-        showTodoList();
     }
 
     /**
@@ -182,17 +141,5 @@ public class AplikasiTodoList {
                 System.out.println("Gagal menghapus todoList: " + number);
             }
         }
-    }
-
-    public static void testViewRemoveTodoList() {
-        addTodoList("satu");
-        addTodoList("dua");
-        addTodoList("tiga");
-
-        showTodoList();
-
-        viewRemoveTodoList();
-
-        showTodoList();
     }
 }
